@@ -8,8 +8,8 @@
  * @var array $statusArray Statuses array
  */
 
-use app\modules\taxonomy\models\TaxonomyTerm;
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyTerm;
+use artkost\taxonomy\Module;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;

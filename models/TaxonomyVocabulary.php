@@ -1,13 +1,11 @@
 <?php
 
-namespace app\modules\taxonomy\models;
+namespace artkost\taxonomy\models;
 
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\Module;
 use Yii;
 use yii\base\ErrorException;
-use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
-use yii\caching\DbDependency;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
@@ -40,7 +38,7 @@ class TaxonomyVocabulary extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'taxonomy_vocabulary';
+        return '{{%taxonomy_vocabulary}}';
     }
 
     /**
@@ -155,7 +153,7 @@ class TaxonomyVocabulary extends ActiveRecord
     protected static function mapTreeDataRecursive($terms, &$data, $level, $delimiter = "--")
     {
         foreach ($terms as $term) {
-            $data[$term->id] = str_repeat($delimiter, $level) . ' ' .$term->name;
+            $data[$term->id] = str_repeat($delimiter, $level) . ' ' . $term->name;
 
             if (!empty($term->child)) {
                 $childLevel = $level + 1;
@@ -209,17 +207,30 @@ class TaxonomyVocabulary extends ActiveRecord
     }
 
     /**
+     * @return string
+     */
+    public function getNameSlug()
+    {
+        return Inflector::slug($this->name);
+    }
+
+    /**
      * @return array Status array.
      */
     public static function statusLabels()
     {
         return [
-            self::STATUS_DISABLED => Module::t('model', 'STATUS_UNPUBLISHED'),
-            self::STATUS_ENABLED => Module::t('model', 'STATUS_PUBLISHED')
+            self::STATUS_DISABLED => Module::t('model', 'Unpublished'),
+            self::STATUS_ENABLED => Module::t('model', 'Published')
         ];
     }
 
-
+    /**
+     * Creates taxonomy vocabulary by name
+     * @param $name
+     * @return TaxonomyVocabulary
+     * @throws ErrorException
+     */
     public static function create($name)
     {
         $title = Inflector::titleize($name, true);

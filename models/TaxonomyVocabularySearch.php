@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\taxonomy\models;
+namespace artkost\taxonomy\models;
 
 use yii\data\ActiveDataProvider;
 
 /**
- * Comment models search model.
+ * Taxonomy Vocabulary models search model.
  */
 class TaxonomyVocabularySearch extends TaxonomyVocabulary
 {

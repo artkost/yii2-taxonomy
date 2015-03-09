@@ -1,8 +1,12 @@
 <?php
 
-namespace app\modules\taxonomy;
+namespace artkost\taxonomy;
 
-class Module extends \yii\base\Module
+use Yii;
+use yii\base\BootstrapInterface;
+use yii\base\Module as BaseModule;
+
+class Module extends BaseModule implements BootstrapInterface
 {
 
 	/**
@@ -34,5 +38,21 @@ class Module extends \yii\base\Module
     public static function t($category, $message, $params = [], $language = null)
     {
         return Yii::t('taxonomy/' . $category, $message, $params, $language);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function bootstrap($app)
+    {
+        $app->i18n->translations['taxonomy/*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@app/modules/taxonomy/messages',
+            'forceTranslation' => true,
+            'fileMap' => [
+                'taxonomy/model' => 'model.php',
+                'taxonomy/admin' => 'admin.php',
+            ]
+        ];
     }
 }

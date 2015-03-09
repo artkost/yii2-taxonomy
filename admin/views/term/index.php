@@ -7,8 +7,8 @@
  * @var int $vid Statuses array
  */
 
-use app\modules\taxonomy\models\TaxonomyTermSearch;
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyTermSearch;
+use artkost\taxonomy\Module;
 use yii\grid\ActionColumn;
 use yii\grid\CheckboxColumn;
 use yii\helpers\Url;

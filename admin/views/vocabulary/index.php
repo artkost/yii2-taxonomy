@@ -1,15 +1,17 @@
 <?php
 
 /**
- * @var \yii\base\View $this View
+ * @var \yii\web\View $this View
  * @var \yii\data\ActiveDataProvider $dataProvider Data provider
  * @var TaxonomyVocabularySearch $searchModel Search model
  * @var array $statusArray Statuses array
  */
 
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyVocabularySearch;
+use artkost\taxonomy\Module;
 use yii\grid\ActionColumn;
 use yii\grid\CheckboxColumn;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\jui\DatePicker;
 

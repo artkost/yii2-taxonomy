@@ -1,13 +1,12 @@
 <?php
 
-namespace app\modules\taxonomy\models;
+namespace artkost\taxonomy\models;
 
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\Module;
 use Yii;
 use yii\base\InvalidCallException;
 use yii\base\InvalidParamException;
 use yii\db\ActiveRecord;
-use yii\db\Expression;
 use yii\db\Query;
 
 /**
@@ -22,7 +21,6 @@ use yii\db\Query;
  */
 class TaxonomyTermHierarchy extends ActiveRecord
 {
-
     protected static $_hierarchy = [];
 
     /**

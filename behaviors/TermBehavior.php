@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\taxonomy\behaviors;
+namespace artkost\taxonomy\behaviors;
 
-use app\modules\taxonomy\models\TaxonomyTerm;
-use app\modules\taxonomy\models\TaxonomyVocabulary;
+use artkost\taxonomy\models\TaxonomyTerm;
+use artkost\taxonomy\models\TaxonomyVocabulary;
 use Yii;
 use yii\base\Behavior;
 use yii\base\InvalidConfigException;
@@ -11,7 +11,8 @@ use yii\base\InvalidParamException;
 use yii\db\ActiveRecord;
 
 /**
- * @property ActiveRecord $owner
+ * Class TermBehavior
+ * @package artkost\taxonomy\behaviors
  */
 class TermBehavior extends Behavior
 {
@@ -96,6 +97,12 @@ class TermBehavior extends Behavior
         return isset($this->instances[$name]) ? $this->instances[$name] : null;
     }
 
+    /**
+     * Creates vocabulary
+     * @param $name
+     * @return TaxonomyVocabulary
+     * @throws \yii\base\ErrorException
+     */
     protected function createVocabularyByName($name)
     {
         return TaxonomyVocabulary::create($name);

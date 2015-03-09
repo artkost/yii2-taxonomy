@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\taxonomy\admin\controllers;
+namespace artkost\taxonomy\admin\controllers;
 
-use app\modules\taxonomy\models\TaxonomyTerm;
-use app\modules\taxonomy\models\TaxonomyTermSearch;
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyTerm;
+use artkost\taxonomy\models\TaxonomyTermSearch;
+use artkost\taxonomy\Module;
 use Yii;
-use yii\base\Controller;
+use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
@@ -18,7 +18,8 @@ class TermController extends Controller
 {
 
     /**
-     * list page.
+     * @param $vid
+     * @return string
      */
     public function actionIndex($vid)
     {
@@ -33,7 +34,8 @@ class TermController extends Controller
     }
 
     /**
-     * Create model page.
+     * @param $vid
+     * @return array|string|Response
      */
     public function actionCreate($vid)
     {

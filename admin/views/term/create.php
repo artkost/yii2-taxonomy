@@ -7,7 +7,7 @@
  * @var array $statusArray Statuses array
  */
 
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\Module;
 
 $this->title = Module::t('admin', 'Taxonomy');
 $this->params['subtitle'] = Module::t('admin', 'Create a term');

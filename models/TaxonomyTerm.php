@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\taxonomy\models;
+namespace artkost\taxonomy\models;
 
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\Module;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Inflector;
@@ -87,6 +87,10 @@ class TaxonomyTerm extends ActiveRecord
         }
     }
 
+    /**
+     * @param TaxonomyTerm $parent
+     * @return $this
+     */
     public function setParent(self &$parent)
     {
         $this->_parent = $parent;
@@ -94,6 +98,9 @@ class TaxonomyTerm extends ActiveRecord
         return $this;
     }
 
+    /**
+     * @return TaxonomyTerm|null|static
+     */
     public function getParent()
     {
         if (is_null($this->parent_id)) {
@@ -112,6 +119,9 @@ class TaxonomyTerm extends ActiveRecord
         return $this->_parent;
     }
 
+    /**
+     * @return string
+     */
     public function getNameSlug()
     {
         return Inflector::slug($this->name);
@@ -150,6 +160,11 @@ class TaxonomyTerm extends ActiveRecord
         return $this->_child;
     }
 
+    /**
+     * @param $vid
+     * @param int $excludeId
+     * @return array
+     */
     public static function treeListData($vid, $excludeId = 0)
     {
         $terms = TaxonomyTermHierarchy::getTree($vid);
