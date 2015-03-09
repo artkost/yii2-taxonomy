@@ -1,31 +1,31 @@
 {
-  "name": "artkost/yii2-taxonomy",
-  "description": "Yii 2 Taxonomy categories and tags module",
-  "keywords": [
-    "yii2",
-    "taxonomy",
-    "category",
-    "tags",
-    "module"
-  ],
-  "type": "yii2-extension",
-  "license": "BSD-3-Clause",
-  "support": {
-    "issues": "https://github.com/artkost/yii2-taxonomy/issues",
-    "source": "https://github.com/artkost/yii2-taxonomy"
-  },
-  "authors": [
-    {
-      "name": "Nikolay Kostyurin",
-      "email": "nikolay@artkost.ru"
+    "name": "artkost/yii2-taxonomy",
+    "description": "Yii 2 Taxonomy categories and tags module",
+    "keywords": [
+        "yii2",
+        "taxonomy",
+        "category",
+        "tags",
+        "module"
+    ],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/artkost/yii2-taxonomy/issues",
+        "source": "https://github.com/artkost/yii2-taxonomy"
+    },
+    "authors": [
+        {
+            "name": "Nikolay Kostyurin",
+            "email": "nikolay@artkost.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "artkost\\taxonomy\\": ""
+        }
     }
-  ],
-  "require": {
-    "yiisoft/yii2": "~2.0.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "artkost\\taxonomy\\": ""
-    }
-  }
 }
