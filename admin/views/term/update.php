@@ -7,8 +7,8 @@
  * @var TaxonomyTerm $parent
  */
 
-use app\modules\taxonomy\models\TaxonomyTerm;
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyTerm;
+use artkost\taxonomy\Module;
 
 $this->title = Module::t('admin', 'Taxonomy');
 $this->params['subtitle'] = Module::t('admin', 'Update term');

@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\taxonomy\admin\controllers;
+namespace artkost\taxonomy\admin\controllers;
 
-use app\modules\taxonomy\models\TaxonomyVocabulary;
-use app\modules\taxonomy\models\TaxonomyVocabularySearch;
-use app\modules\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyVocabulary;
+use artkost\taxonomy\models\TaxonomyVocabularySearch;
+use artkost\taxonomy\Module;
 use Yii;
-use yii\base\Controller;
+use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;

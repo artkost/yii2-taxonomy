@@ -8,8 +8,8 @@
  * @var array $statusArray Statuses array
  */
 
-use app\modules\taxonomy\Module;
-use app\modules\taxonomy\models\TaxonomyVocabulary;
+use artkost\taxonomy\Module;
+use artkost\taxonomy\models\TaxonomyVocabulary;
 
 $user = Yii::$app->user;
 $this->title = Module::t('admin', 'Taxonomy');

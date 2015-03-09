@@ -1,16 +1,20 @@
 <?php
 
-namespace app\modules\taxonomy\widgets;
+namespace artkost\taxonomy\widgets;
 
-use app\modules\taxonomy\models\TaxonomyTerm;
-use app\modules\taxonomy\models\TaxonomyTermHierarchy;
-use app\modules\taxonomy\models\TaxonomyVocabulary;
+use artkost\taxonomy\models\TaxonomyTerm;
+use artkost\taxonomy\models\TaxonomyTermHierarchy;
+use artkost\taxonomy\models\TaxonomyVocabulary;
 use yii\base\InvalidConfigException;
 use yii\bootstrap\Nav;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+/**
+ * Class TermsListNav
+ * @package artkost\taxonomy\widgets
+ */
 class TermsListNav extends Nav
 {
     public $vocabularyName;
@@ -59,7 +63,7 @@ class TermsListNav extends Nav
     }
 
     /**
-     * @return \app\modules\taxonomy\models\TaxonomyTerm[]|array
+     * @return TaxonomyTerm[]|array
      */
     protected function getTerms()
     {

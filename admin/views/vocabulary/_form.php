@@ -10,8 +10,8 @@
  * @var array $statusArray Statuses array
  */
 
-use app\modules\taxonomy\Module;
-use app\modules\taxonomy\TaxonomyVocabulary;
+use artkost\taxonomy\Module;
+use artkost\taxonomy\TaxonomyVocabulary;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
