@@ -2,6 +2,8 @@
 
 namespace app\modules\taxonomy;
 
+use Yii;
+
 class Module extends \yii\base\Module
 {
 
