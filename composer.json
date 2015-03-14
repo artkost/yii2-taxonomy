@@ -9,7 +9,7 @@
         "module"
     ],
     "type": "yii2-extension",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "support": {
         "issues": "https://github.com/artkost/yii2-taxonomy/issues",
         "source": "https://github.com/artkost/yii2-taxonomy"
