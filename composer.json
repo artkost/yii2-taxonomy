@@ -27,5 +27,8 @@
         "psr-4": {
             "artkost\\taxonomy\\": ""
         }
+    },
+    "extra": {
+        "bootstrap": "artkost\\taxonomy\\Bootstrap"
     }
 }

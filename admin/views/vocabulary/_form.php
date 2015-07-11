@@ -10,7 +10,7 @@
  * @var array $statusArray Statuses array
  */
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use artkost\taxonomy\TaxonomyVocabulary;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -21,14 +21,14 @@ use yii\widgets\ActiveForm;
     <div class="row">
         <div class="col-sm-12">
             <?= $form->field($model, 'title')
-                ->textInput(['placeholder' => Module::t('admin', 'Title')]) ?>
+                ->textInput(['placeholder' => Taxonomy::t('admin', 'Title')]) ?>
             <?= $form->field($model, 'name')
-                ->textInput(['placeholder' => Module::t('admin', 'Name'), 'disabled' => !$model->isNewRecord]) ?>
+                ->textInput(['placeholder' => Taxonomy::t('admin', 'Name'), 'disabled' => !$model->isNewRecord]) ?>
         </div>
     </div>
 
 <?= Html::submitButton(
-    $model->isNewRecord ? Module::t('admin', 'Create vocabulary') : Module::t('admin', 'Update vocabulary'),
+    $model->isNewRecord ? Taxonomy::t('admin', 'Create vocabulary') : Taxonomy::t('admin', 'Update vocabulary'),
     [
         'class' => $model->isNewRecord ? 'btn btn-primary btn-large' : 'btn btn-success btn-large'
     ]

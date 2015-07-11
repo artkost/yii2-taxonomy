@@ -2,7 +2,7 @@
 
 namespace artkost\taxonomy\models;
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Inflector;
@@ -83,7 +83,7 @@ class TaxonomyTerm extends ActiveRecord
     public function validateHasParent($attribute, $params)
     {
         if (!$this->hasErrors() && $this->getParent() == null) {
-            $this->addError($attribute, Module::t('model', 'Invalid parent term id'));
+            $this->addError($attribute, Taxonomy::t('model', 'Invalid parent term id'));
         }
     }
 

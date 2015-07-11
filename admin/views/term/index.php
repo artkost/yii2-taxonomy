@@ -8,13 +8,13 @@
  */
 
 use artkost\taxonomy\models\TaxonomyTermSearch;
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use yii\grid\ActionColumn;
 use yii\grid\CheckboxColumn;
 use yii\helpers\Url;
 
-$this->title = Module::t('admin', 'Taxonomy');
-$this->params['subtitle'] = Module::t('admin', 'Terms');
+$this->title = Taxonomy::t('admin', 'Taxonomy');
+$this->params['subtitle'] = Taxonomy::t('admin', 'Terms');
 $this->params['breadcrumbs'] = [
     $this->title
 ];

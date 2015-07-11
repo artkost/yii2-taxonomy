@@ -2,7 +2,7 @@
 
 namespace artkost\taxonomy\models;
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use Yii;
 use yii\base\ErrorException;
 use yii\behaviors\TimestampBehavior;
@@ -21,6 +21,8 @@ use yii\helpers\Inflector;
  * @property integer $status_id
  * @property integer $created_at
  * @property integer $updated_at
+ *
+ * @property TaxonomyTerm[] $terms
  */
 class TaxonomyVocabulary extends ActiveRecord
 {
@@ -61,14 +63,14 @@ class TaxonomyVocabulary extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Module::t('model', 'ID'),
-            'name' => Module::t('model', 'Name'),
-            'title' => Module::t('model', 'Title'),
-            'type' => Module::t('model', 'Type'),
-            'nested' => Module::t('model', 'Nested'),
-            'status_id' => Module::t('model', 'Status ID'),
-            'created_at' => Module::t('model', 'Created At'),
-            'updated_at' => Module::t('model', 'Updated At'),
+            'id' => Taxonomy::t('model', 'ID'),
+            'name' => Taxonomy::t('model', 'Name'),
+            'title' => Taxonomy::t('model', 'Title'),
+            'type' => Taxonomy::t('model', 'Type'),
+            'nested' => Taxonomy::t('model', 'Nested'),
+            'status_id' => Taxonomy::t('model', 'Status ID'),
+            'created_at' => Taxonomy::t('model', 'Created At'),
+            'updated_at' => Taxonomy::t('model', 'Updated At'),
         ];
     }
 
@@ -82,18 +84,6 @@ class TaxonomyVocabulary extends ActiveRecord
                 'class' => TimestampBehavior::className(),
             ]
         ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function scenarios()
-    {
-        $scenarios = parent::scenarios();
-        $scenarios['admin-create'] = ['name', 'title'];
-        $scenarios['admin-update'] = ['name', 'title'];
-
-        return $scenarios;
     }
 
     /**
@@ -220,8 +210,8 @@ class TaxonomyVocabulary extends ActiveRecord
     public static function statusLabels()
     {
         return [
-            self::STATUS_DISABLED => Module::t('model', 'Unpublished'),
-            self::STATUS_ENABLED => Module::t('model', 'Published')
+            self::STATUS_DISABLED => Taxonomy::t('model', 'Unpublished'),
+            self::STATUS_ENABLED => Taxonomy::t('model', 'Published')
         ];
     }
 

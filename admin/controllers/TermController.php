@@ -4,7 +4,7 @@ namespace artkost\taxonomy\admin\controllers;
 
 use artkost\taxonomy\models\TaxonomyTerm;
 use artkost\taxonomy\models\TaxonomyTermSearch;
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use Yii;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -47,7 +47,7 @@ class TermController extends Controller
                     return $this->redirect(['update', 'id' => $model->id, 'vid' => $vid]);
                 } else {
                     Yii::$app->session->setFlash('danger',
-                        Module::t('admin', 'Failed to create a term'));
+                        Taxonomy::t('admin', 'Failed to create a term'));
                     return $this->refresh();
                 }
             } elseif (Yii::$app->request->isAjax) {
@@ -81,7 +81,7 @@ class TermController extends Controller
                     return $this->refresh();
                 } else {
                     Yii::$app->session->setFlash('danger',
-                        Module::t('admin', 'Failed to update term {name}', ['{name}' => $model->name]));
+                        Taxonomy::t('admin', 'Failed to update term {name}', ['{name}' => $model->name]));
                     return $this->refresh();
                 }
             } elseif (Yii::$app->request->isAjax) {

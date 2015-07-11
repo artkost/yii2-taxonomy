@@ -8,15 +8,15 @@
  */
 
 use artkost\taxonomy\models\TaxonomyVocabularySearch;
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use yii\grid\ActionColumn;
 use yii\grid\CheckboxColumn;
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\jui\DatePicker;
 
-$this->title = Module::t('admin', 'Taxonomy');
-$this->params['subtitle'] = Module::t('admin', 'Vocabulary list');
+$this->title = Taxonomy::t('admin', 'Taxonomy');
+$this->params['subtitle'] = Taxonomy::t('admin', 'Vocabulary list');
 $this->params['breadcrumbs'] = [
     $this->title
 ];
@@ -52,7 +52,7 @@ $gridConfig = [
                 $statusArray,
                 [
                     'class' => 'form-control',
-                    'prompt' => Module::t('admin', 'Select status')
+                    'prompt' => Taxonomy::t('admin', 'Select status')
                 ]
             )
         ],

@@ -4,7 +4,7 @@ namespace artkost\taxonomy\admin\controllers;
 
 use artkost\taxonomy\models\TaxonomyVocabulary;
 use artkost\taxonomy\models\TaxonomyVocabularySearch;
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use Yii;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -46,7 +46,7 @@ class VocabularyController extends Controller
                 if ($model->save(false)) {
                     return $this->redirect(['update', 'id' => $model->id]);
                 } else {
-                    Yii::$app->session->setFlash('danger', Module::t('admin', 'Failed to create a vocabulary'));
+                    Yii::$app->session->setFlash('danger', Taxonomy::t('admin', 'Failed to create a vocabulary'));
                     return $this->refresh();
                 }
             } elseif (Yii::$app->request->isAjax) {
@@ -80,7 +80,7 @@ class VocabularyController extends Controller
                     return $this->refresh();
                 } else {
                     Yii::$app->session->setFlash('danger',
-                        Module::t('admin', 'Failed to update vocabulary {name}', ['{name}' => $model->name]));
+                        Taxonomy::t('admin', 'Failed to update vocabulary {name}', ['{name}' => $model->name]));
                     return $this->refresh();
                 }
             } elseif (Yii::$app->request->isAjax) {

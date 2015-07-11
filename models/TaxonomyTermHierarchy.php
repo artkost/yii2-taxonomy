@@ -2,7 +2,7 @@
 
 namespace artkost\taxonomy\models;
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use Yii;
 use yii\base\InvalidCallException;
 use yii\base\InvalidParamException;
@@ -48,9 +48,9 @@ class TaxonomyTermHierarchy extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'vid' => Module::t('model', 'Vocabulary ID'),
-            'parent_id' => Module::t('model', 'Parent ID'),
-            'child_id' => Module::t('model', 'Child ID'),
+            'vid' => Taxonomy::t('model', 'Vocabulary ID'),
+            'parent_id' => Taxonomy::t('model', 'Parent ID'),
+            'child_id' => Taxonomy::t('model', 'Child ID'),
         ];
     }
 

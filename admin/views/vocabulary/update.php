@@ -8,12 +8,12 @@
  * @var array $statusArray Statuses array
  */
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use artkost\taxonomy\models\TaxonomyVocabulary;
 
 $user = Yii::$app->user;
-$this->title = Module::t('admin', 'Taxonomy');
-$this->params['subtitle'] = Module::t('admin', 'Update Vocabulary');
+$this->title = Taxonomy::t('admin', 'Taxonomy');
+$this->params['subtitle'] = Taxonomy::t('admin', 'Update Vocabulary');
 $this->params['breadcrumbs'] = [
     [
         'label' => $this->title,

@@ -8,10 +8,10 @@
  */
 
 use artkost\taxonomy\models\TaxonomyTerm;
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 
-$this->title = Module::t('admin', 'Taxonomy');
-$this->params['subtitle'] = Module::t('admin', 'Update term');
+$this->title = Taxonomy::t('admin', 'Taxonomy');
+$this->params['subtitle'] = Taxonomy::t('admin', 'Update term');
 $this->params['breadcrumbs'] = [
     [
         'label' => $this->title,

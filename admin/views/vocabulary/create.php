@@ -8,11 +8,11 @@
  * @var array $statusArray Statuses array
  */
 
-use artkost\taxonomy\Module;
+use artkost\taxonomy\Taxonomy;
 use artkost\taxonomy\models\TaxonomyVocabulary;
 
-$this->title = Module::t('admin', 'Taxonomy');
-$this->params['subtitle'] = Module::t('admin', 'Create vocabulary');
+$this->title = Taxonomy::t('admin', 'Taxonomy');
+$this->params['subtitle'] = Taxonomy::t('admin', 'Create vocabulary');
 $this->params['breadcrumbs'] = [
     [
         'label' => $this->title,
