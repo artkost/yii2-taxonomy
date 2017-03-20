@@ -21,14 +21,20 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.0"
+        "php": ">=5.5",
+        "yiisoft/yii2": "~2.0.5",
+        "paulzi/yii2-nested-sets": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "phpunit/dbunit": "~1.0"
     },
     "autoload": {
         "psr-4": {
-            "artkost\\taxonomy\\": ""
+            "artkost\\yii2\\taxonomy\\": "src"
         }
     },
     "extra": {
-        "bootstrap": "artkost\\taxonomy\\Bootstrap"
+        "bootstrap": "artkost\\yii2\\taxonomy\\Bootstrap"
     }
 }

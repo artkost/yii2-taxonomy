@@ -10,7 +10,7 @@ This module inspired by Drupal taxonomy system and works same.
 ```php
 
 return [
-  'modules' => [
+  'components' => [
     'taxonomy' => [
       'class' => '\artkost\taxonomy\Module'
     ]
